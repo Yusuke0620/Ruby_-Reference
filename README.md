@@ -1,12 +1,116 @@
-# Ruby_-Reference
-Rubyのマイリファレンス
+# Rubyにおける数値範囲の繰り返し処理
+
+このセクションでは、Rubyの`upto`メソッドを使用して、指定された数値範囲内での繰り返し処理について説明します。<br><br>
+
+
+
+## `upto`メソッドの使用方法
+
+`upto`メソッドを使用すると、開始値から終了値までの数値に対して、指定したブロック内のコードを繰り返し実行することができます。以下に基本的な構文を示します。<br><br>
 
 
 
 以下のコードは、1から5までの数値を出力します。
-```
+```ruby
 1.upto(5) do |i|
   puts i
 end
 
+```
+
+<br>
+出力結果
+<br>
+
+```ruby
+1
+2
+3
+4
+5
+```
+
+
+
+<br><br><br>
+## `upto`メソッドの使用方法2
+条件①3で割り切れる数値を引数に渡すと,Fizzを返す条件<br>
+条件②5ならBuzz<br>
+条件③15ならFizz Buzz<br>
+条件④それ以外ならその数値を文字列に変えて返す<br>
+
+```ruby
+def fizz_buzz(n)
+  if n % 15 == 0
+      'Fizz Buzz'
+  elsif n % 3 == 0
+      'Fizz'
+  elsif n % 5 == 0
+      'Buzz'
+  else
+      n.to_s
+  end
+end
+
+# uptoメソッド
+1.upto(50) do |n|
+    puts fizz_buzz(n)
+end
+```
+
+<br>
+出力結果
+<br>
+
+```ruby
+1
+2
+Fizz
+4
+Buzz
+Fizz
+7
+8
+Fizz
+Buzz
+11
+Fizz
+13
+14
+Fizz Buzz
+16
+17
+Fizz
+19
+Buzz
+Fizz
+22
+23
+Fizz
+Buzz
+26
+Fizz
+28
+29
+Fizz Buzz
+31
+32
+Fizz
+34
+Buzz
+Fizz
+37
+38
+Fizz
+Buzz
+41
+Fizz
+43
+44
+Fizz Buzz
+46
+47
+Fizz
+49
+Buzz
 ```
